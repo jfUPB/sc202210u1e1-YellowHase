@@ -3,29 +3,45 @@
 // VALENTINA.LONDONOSA@UPB.EDU.CO
 (START)
 //Pantalla en negro con F
+//Aqui se guarda el valor inicial de la pantalla
 @16384
 D=A
 @1 
 M=D
-//Inicio de la pantalla
+//Aqui se guarda el valor final de la pantalla 
 @1
 D=M
 @2 
 M=D
-//Guardar el 70 en la posicion 3
+//Guardar el valor de F (70) en la posicion 3
 @70
 D=A
 @3
 M=D
-//Ciclo -1
 @3
 D=M
 @24576
 A=M
 M=D-A
 M;JGT
-@20
+@34
 M;JEQ
+//
+//Guardar el valor de c (67)
+@67
+D=A
+@3
+M=D
+@24576
+A=M
+M=D-A
+D=M
+@20
+D;JLT
+@20
+D;JGT
+@55
+D;JEQ
 //Limites pantalla
 @16384
 D=M
@@ -44,9 +60,45 @@ M=M+1
 //Limite de pixeles
 @24575
 D=M
-@35
+@20
 D;JLT
+@38
+D;JEQ
+@24576
+M=0
+D=M
+
+
+//Limites pantalla
+@16384
+D=M
+@24575
+D=D-A
+//Ciclo pintar a blanco
+@5
+D;JGT
+@16384
+M=0
+D=A
+@2
+M=D
+D=D-A
+//Se le da el valor 0 desde el inicio de la pantalla
+@2 
+A=M
+M=0
+@2
+M=M+1
+//Limite de pixeles
+@24575
+D=M
+@66
+D;JLT
+@8
+D;JEQ
 //
-@21
-0;JMP //Fin del ciclo 
-//Fin pantalla en negro con F
+//Fin pantalla en blanco con c
+//Fin ambos ejercicios
+
+
+
