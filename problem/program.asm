@@ -30,7 +30,6 @@ M;JEQ
 @16384
 D=M
 @24575
-D=M
 D=D-A
 @5
 D;JGT
@@ -42,6 +41,12 @@ A=M
 M=-1
 @2
 M=M+1
+//Limite de pixeles
+@24575
+D=M
+@35
+D;JLT
+//
 @21
 0;JMP //Fin del ciclo 
 //Fin pantalla en negro con F
